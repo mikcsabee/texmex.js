@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "rootDirs": ["./"],
+    "declaration": true,
+    "allowJs": true,
+    "target": "es2017",
+    "experimentalDecorators": true,
+    "lib": [ "es2017" ],
+    "module": "commonjs"
+  },
+  "include": [
+    "./"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
