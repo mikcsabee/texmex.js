@@ -1,16 +1,20 @@
-# TexMex (ts)
+# TexMex.js
 Lightweight Object-oriented Node.js framework
 ## Features:
  - Lightweight
  - Minimalistic
- - Built on top of Node.js not on other framework
- - No unnecessary dependencies
  - WebSocket support
  - Dependency Injection
 
+## Installation
+```bash
+npm install --save @texmex.js/core @texmex.js/server
+```
+
 ## Hello World:
 ```javascript
-import { Controller, Inject, Server } from 'texmex'
+import { Controller, Inject } from '@texmex.js/core'
+import { Server } from '@texmex.js/server'
 
 @Controller('/')
 export class DemoController {
