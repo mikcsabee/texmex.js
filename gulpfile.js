@@ -87,7 +87,7 @@ const main = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 const createPackageJsonStr = (module) => {
   const obj = JSON.parse(fs.readFileSync(`${module}/package.template.json`, 'utf8'))
-  obj.version = main.dependencies[obj.name]
+  obj.version = main.dependencies[obj.name].replace('^', '');
   obj.license = main.license
   obj.author = main.author
   obj.repository = main.repository

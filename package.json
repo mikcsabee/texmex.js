@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/mikcsabee/texmex.js#readme",
   "dependencies": {
-    "@texmex.js/core": "^0.1.2",
-    "@texmex.js/server": "^0.1.2",
+    "@texmex.js/core": "0.1.2",
+    "@texmex.js/server": "0.1.2",
     "bufferutil": "^3.0.3",
     "mime": "^2.2.0",
     "ws": "^5.1.0"
