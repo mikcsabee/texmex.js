@@ -13,7 +13,7 @@ export class RouteTree {
    * @param map `path->Controller.prototype` map
    * or `path->Websocket.prototype` map
    */
-  constructor(map: Map<string, any> ) {
+  constructor(map: Map<string, any>) {
     this.rootRouteNode = new RouteNode('')
 
     map.forEach((controllerClass, path) => {

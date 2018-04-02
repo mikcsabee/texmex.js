@@ -8,6 +8,7 @@ const file = require('gulp-file')
 
 const packages = {
   core: ts.createProject('core/tsconfig.json'),
+  express: ts.createProject('express/tsconfig.json'),
   server: ts.createProject('server/tsconfig.json')
 }
 const modules = Object.keys(packages)
@@ -20,6 +21,12 @@ gulp.task('default', () => {
       [module]
     )
   })
+})
+
+gulp.task('clean:tmp', () => {
+  gulp
+  .src(['.nyc_output', 'coverage'], { read: false })
+  .pipe(clean())
 })
 
 gulp.task('clean:dist', () => {
@@ -35,7 +42,7 @@ gulp.task('clean:node_module', () => {
 })
 
 gulp.task('clean', (cb) => {
-  gulpSequence('clean:dist', 'clean:node_module', cb)
+  gulpSequence('clean:dist', 'clean:node_module', 'clean:tmp', cb)
 })
 
 gulp.task('init:package', () => {
@@ -56,7 +63,7 @@ modules.forEach(module => {
 })
 
 gulp.task('build', (cb) => {
-  gulpSequence('clean:node_module', 'init:package', 'core', modules.filter(module => module !== 'core'), 'copy:module', cb)
+  gulpSequence('clean:node_module', 'clean:tmp', 'init:package', 'core', modules.filter(module => module !== 'core'), 'copy:module', cb)
 })
 
 gulp.task('dist', (cb) => {

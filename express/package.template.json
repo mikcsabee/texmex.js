@@ -1,0 +1,10 @@
+{
+  "name": "@texmex.js/express",
+  "description": "Minimalistic Object-Oriented Web Framework (@express)",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "dependencies": [
+    "@texmex.js/core",
+    "express"
+  ]
+}
