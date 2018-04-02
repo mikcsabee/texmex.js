@@ -1,0 +1,79 @@
+{
+  "name": "texmex.js",
+  "version": "0.1.1",
+  "description": "Lightweight Object-oriented Node.js framework",
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "dist": "gulp build && gulp dist",
+    "lint": "tslint -c tslint.json 'core/**/*.ts server/**/*.ts'",
+    "mocha": "cross-env NODE_ENV=test nyc mocha --bail --recursive --compilers ts:ts-node/register core/test server/test",
+    "test": "npm run mocha && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikcsabee/texmex.js.git"
+  },
+  "author": "Csaba Miklos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikcsabee/texmex.js/issues"
+  },
+  "homepage": "https://github.com/mikcsabee/texmex.js#readme",
+  "dependencies": {
+    "@texmex.js/core": "^0.1.2",
+    "@texmex.js/server": "^0.1.2",
+    "bufferutil": "^3.0.3",
+    "mime": "^2.2.0",
+    "ws": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^5.0.0",
+    "@types/node": "^9.6.0",
+    "@types/sinon": "^4.3.0",
+    "chai": "^4.1.2",
+    "cross-env": "^5.1.4",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-file": "^0.4.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-typescript": "^4.0.2",
+    "mocha": "^5.0.5",
+    "nodemon": "^1.17.2",
+    "nyc": "^11.6.0",
+    "sinon": "^4.4.10",
+    "sinon-chai": "^3.0.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.1"
+  },
+  "nyc": {
+    "include": [
+      "core/**/*.ts",
+      "server/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules/",
+      "**/*interface.ts",
+      "core/src/index.ts",
+      "core/src/logger/*",
+      "server/src/index.ts",
+      "server/src/route/static.path.ts",
+      "*/test/*"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
+}

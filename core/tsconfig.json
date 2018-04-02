@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowJs": false,
+    "declaration": true,
     "outDir": "./lib/",
     "rootDirs": ["./src/","./test/"],
     "target": "es2016",

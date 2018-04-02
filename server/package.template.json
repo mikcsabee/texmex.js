@@ -1,0 +1,12 @@
+{
+  "name": "@texmex.js/server",
+  "description": "Minimalistic Object-Oriented Web Framework (@server)",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "dependencies": [
+    "@texmex.js/core",
+    "bufferutil",
+    "mime",
+    "ws"
+  ]
+}

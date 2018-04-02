@@ -150,8 +150,8 @@ export class MyAuthentication implements AuthenticationInterface {
  - **Default behavior: log to console**
 
 ## Roadmap
- - Better project build (Gulp)
  - Verbose information
  - CircleCI integration
  - Example projects `TypeScript / JavaScript`
+ - Integration test
 

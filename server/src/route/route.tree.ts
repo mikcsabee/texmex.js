@@ -16,11 +16,10 @@ export class RouteTree {
   constructor(map: Map<string, any> ) {
     this.rootRouteNode = new RouteNode('')
 
-    for (const path of map.keys()) {
+    map.forEach((controllerClass, path) => {
       const segments = path.split('/').filter(String)
-      const controllerClass = map.get(path)
       this.putSegmentsIntoRootNode(segments, controllerClass)
-    }
+    })
   }
 
   /**
