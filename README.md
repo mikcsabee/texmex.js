@@ -56,7 +56,7 @@ const server = new Server({
 - The Controller decorator can handle multiple paths. (`@Controller('/', '/api/')`).
 - Controllers can handle five different HTTP methods: `get, post, put, delete, options`.
 - Methods can be `async` or `non-async`.
-- Texmex creates a **controler instance per request**.
+- Texmex creates a **controller instance per request**.
 - Controller constructor invoked with three arguments:
     - `request: http.IncomingMessage`
     - `response: http.ServerResponse`
@@ -79,7 +79,7 @@ export class DemoController {
   }
 
   public async post(firstParam: string, secondParam: string): MyResult {
-    return service.handlePost(firstParam, secondParam)
+    return this.service.handlePost(firstParam, secondParam)
   }
 }
 ```
@@ -124,7 +124,7 @@ There is two component available by default, but it's highly recommended to use 
  - Component name: `authentication`
  - Interface: `AuthenticationInterface`
  - **Default behavior: accepts all requests**
- - Returns the `accessResult` (3rd argument for `@Controller` and `@Websocket` constructors).
+ - Returns the **`accessResult`** (3rd argument for `@Controller` and `@Websocket` constructors).
 ```javascript
 @Injectable('authentication')
 export class MyAuthentication implements AuthenticationInterface {

@@ -6,8 +6,8 @@
     "clean": "gulp clean",
     "build": "gulp build",
     "dist": "gulp build && gulp dist",
-    "lint": "tslint -c tslint.json 'core/**/*.ts server/**/*.ts'",
-    "mocha": "cross-env NODE_ENV=test nyc mocha --bail --recursive --compilers ts:ts-node/register core/test server/test",
+    "lint": "tslint -c tslint.json '**/*.ts'",
+    "mocha": "cross-env NODE_ENV=test nyc mocha --bail --recursive --compilers ts:ts-node/register **/test/**/*.spec.ts",
     "test": "npm run mocha && npm run lint"
   },
   "repository": {
