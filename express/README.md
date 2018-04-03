@@ -3,7 +3,6 @@ An Express Bridge for Texmex.js
 This project is in **alpha state**, the goal of this project is to be able to run the `@Controller` and `@WebSocket` classes on top of `ExpressJS`,
 
 ## TODO:
-- WebSocket support
 - Unit testing
 - Refactor duplicate codes from `@texmex.js/server`
 

@@ -5,6 +5,7 @@
   "types": "./lib/index.d.ts",
   "dependencies": [
     "@texmex.js/core",
-    "express"
+    "express",
+    "ws"
   ]
 }
