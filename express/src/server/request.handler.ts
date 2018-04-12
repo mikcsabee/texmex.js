@@ -12,8 +12,8 @@ import { ServerConfig } from './server.config'
  * @param path the path from `@Controller(path)`
  * @param injector The `@Injectabel` Components
  */
-export function requestHandler(req: http.IncomingMessage, res: http.ServerResponse, controllerClass: any, path: string, injector: Injector, config: ServerConfig): void {
-  handleController(req, res, controllerClass, path, injector, config)
+export function requestHandler(req: http.IncomingMessage, res: http.ServerResponse, controllerClass: any, path: string, injector: Injector, config: ServerConfig): Promise<void> {
+  return handleController(req, res, controllerClass, path, injector, config)
     .catch(() => handleException(config.default500, res))
 }
 

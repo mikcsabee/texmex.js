@@ -29,7 +29,7 @@ const controllerFactory = (tree: RouteTree, url: string): HasNameController|unde
   return undefined
 }
 
-describe('server.RouteTree', () => {
+describe('express.RouteTree', () => {
   const controllerMap: Map<string, any> = registry.getMap(registry.CONTROLLER)
 
   beforeEach(() => {

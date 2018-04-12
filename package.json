@@ -55,6 +55,7 @@
   "nyc": {
     "include": [
       "core/**/*.ts",
+      "express/**/*.ts",
       "server/**/*.ts"
     ],
     "exclude": [
@@ -62,6 +63,7 @@
       "**/*interface.ts",
       "core/src/index.ts",
       "core/src/logger/*",
+      "express/src/index.ts",
       "server/src/index.ts",
       "server/src/route/static.path.ts",
       "*/test/*"
